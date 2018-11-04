@@ -11,7 +11,7 @@
     <artifactId>spring-cache</artifactId>
 
     <properties>
-        <spring.version>4.2.6.RELEASE</spring.version>
+        <!--<spring.version>4.2.6.RELEASE</spring.version>-->
     </properties>
 
     <dependencies>

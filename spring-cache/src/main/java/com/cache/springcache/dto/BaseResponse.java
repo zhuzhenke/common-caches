@@ -8,7 +8,30 @@ public class BaseResponse implements Serializable {
 
     private String errMsg;
 
-    private String result;
+    private Object result;
+
+    public BaseResponse() {
+    }
+
+    public BaseResponse(Integer code, Object result) {
+        this.code = code;
+        this.result = result;
+    }
+
+    public BaseResponse(Integer code, String errMsg) {
+        this.code = code;
+        this.errMsg = errMsg;
+    }
+
+
+    public static BaseResponse success(Object result) {
+        return new BaseResponse(100, result);
+    }
+
+    public static BaseResponse fail(String errMsg) {
+        return new BaseResponse(200, errMsg);
+    }
+
 
     public Integer getCode() {
         return code;
@@ -26,11 +49,11 @@ public class BaseResponse implements Serializable {
         this.errMsg = errMsg;
     }
 
-    public String getResult() {
+    public Object getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(Object result) {
         this.result = result;
     }
 }
