@@ -16,6 +16,16 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>16.0.1</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -23,6 +33,14 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -45,6 +63,7 @@
         <module>google-guava</module>
         <module>jetcache</module>
         <module>spring-cache</module>
+        <module>common-cache</module>
     </modules>
 
 </project>

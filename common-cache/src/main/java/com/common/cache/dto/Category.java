@@ -1,4 +1,4 @@
-package com.cache.springcache.dto;
+package com.common.cache.dto;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.cache.springcache;
+package com.cache.jetcache;
 
 import com.common.cache.dto.BaseResponse;
 import com.common.cache.dto.Category;
@@ -59,12 +59,4 @@ public class CategoryController {
         category.setCateId(cateId);
         return BaseResponse.success(categoryService.get(category));
     }
-
-
-    @RequestMapping("/list")
-    public BaseResponse getCategory(Integer pageNo, Integer pageSize) {
-        return BaseResponse.success(categoryService.queryList(pageNo, pageSize));
-    }
-
-
 }

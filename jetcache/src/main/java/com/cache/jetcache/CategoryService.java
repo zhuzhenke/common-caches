@@ -1,9 +1,8 @@
-package com.cache.springcache.service;
+package com.cache.jetcache;
 
-import com.cache.springcache.CategoryCacheConstants;
-import com.cache.springcache.dto.Category;
+import com.common.cache.constants.CategoryCacheConstants;
+import com.common.cache.dto.Category;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
