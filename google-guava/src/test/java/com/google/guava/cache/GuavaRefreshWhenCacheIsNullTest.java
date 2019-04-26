@@ -88,5 +88,37 @@ public class GuavaRefreshWhenCacheIsNullTest {
         }
     }
 
+    @Test
+    public void testGuavaRefreshWhenCacheIsNullReturnDefaultNullValue() {
+
+        String nullValue = "nullValue";
+
+        LoadingCache<String, String> refreshWarehouseCache = cacheBuilder.build(new CacheLoader<String, String>() {
+            @Override
+            public String load(String key) {
+                if ("ValueOfKeyIsNull".equals(key)) {
+                    return nullValue;
+                }
+                return "1234567890";
+            }
+
+            @Override
+            public ListenableFuture<String> reload(String key, String oldValue) {
+                System.out.println("testGuavaRefresh reload : key=" + key);
+                return Futures.immediateFuture(load(key));
+            }
+        });
+
+        try {
+            String myValue = refreshWarehouseCache.get("myKey");
+            Assert.assertEquals("1234567890", myValue);
+
+            //throws Exception
+            myValue = refreshWarehouseCache.get("ValueOfKeyIsNull");
+            Assert.assertEquals(nullValue, myValue);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
